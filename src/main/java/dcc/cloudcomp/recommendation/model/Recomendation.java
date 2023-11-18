@@ -26,7 +26,19 @@ public class Recomendation {
             recommendationList.remove(last);
             recommendationList.add(rule);
         }
-        recommendationList.add(rule);
         recommendationList.sort((o1, o2) -> Float.compare(o1.getCompatibility(), o2.getCompatibility()));
+    }
+
+    public  List<String> getRecommentaions(){
+        List<String> recommendations = new ArrayList<>();
+        for(RuleCompatibility rule: recommendationList){
+            for(String playlist:rule.getRule().getPlaylists()){
+                if(!recommendations.contains(playlist)){
+                    recommendations.add(playlist);
+                    break;
+                }
+            }
+        }
+        return recommendations;
     }
 }

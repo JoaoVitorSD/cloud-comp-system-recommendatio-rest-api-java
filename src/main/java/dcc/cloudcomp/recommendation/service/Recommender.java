@@ -42,6 +42,6 @@ public class Recommender {
             compatibility = (float) commonTracks / rule.getTracks().size();
             recomendation.addRule(new RuleCompatibility(rule, compatibility));
         }
-        return recomendation.getRecommendationList().stream().map(r -> r.getRule().getPlaylists().get(0)).toList();
+        return recomendation.getRecommentaions();
     }
 }
