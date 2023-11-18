@@ -3,12 +3,9 @@ package dcc.cloudcomp.recommendation.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dcc.cloudcomp.recommendation.model.Dataset;
-import dcc.cloudcomp.recommendation.model.Recomendation;
+import dcc.cloudcomp.recommendation.model.Recommendation;
+import dcc.cloudcomp.recommendation.model.RulesMatchManager;
 import dcc.cloudcomp.recommendation.model.RuleCompatibility;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -28,21 +25,20 @@ public class Recommender {
     }
 
 
-    public List<String> getRecommendation(List<String> tracks){
-        Recomendation recomendation = new Recomendation();
+    public List<Recommendation> getRecommendation(List<String> tracks){
+        RulesMatchManager rulesMatchsManager = new RulesMatchManager();
         for (Rule rule : dataset.getRecommendationList()) {
-            int commonTracks = 0;
-            float compatibility = 0;
+            List<String> matchedTracks = new ArrayList<>();
             for(String track : tracks){
                 for(String trackRule : rule.getTracks()){
                     if(track.equals(trackRule)){
-                        commonTracks++;
+                        matchedTracks.add(track);
                     }
                 }
             }
-            compatibility = (float) commonTracks / rule.getTracks().size();
-            recomendation.addRule(new RuleCompatibility(rule, compatibility));
+            float compatibility = (float) matchedTracks.size() / rule.getTracks().size();
+            rulesMatchsManager.addRule(new RuleCompatibility(rule, compatibility, matchedTracks));
         }
-        return recomendation.getRecommentaions();
+        return rulesMatchsManager.getRecommentaions();
     }
 }

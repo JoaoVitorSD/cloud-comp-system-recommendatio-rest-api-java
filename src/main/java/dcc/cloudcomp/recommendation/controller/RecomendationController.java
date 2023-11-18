@@ -1,5 +1,6 @@
 package dcc.cloudcomp.recommendation.controller;
 
+import dcc.cloudcomp.recommendation.model.Recommendation;
 import dcc.cloudcomp.recommendation.service.Recommender;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class RecomendationController {
     }
 
     @GetMapping
-    public List<String> getRecommendation(@RequestParam List<String> tracks) {
+    public List<Recommendation> getRecommendation(@RequestParam List<String> tracks) {
         return recommender.getRecommendation(tracks);
     }
 }
