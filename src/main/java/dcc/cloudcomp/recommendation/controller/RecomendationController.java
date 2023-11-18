@@ -1,15 +1,13 @@
 package dcc.cloudcomp.recommendation.controller;
 
 import dcc.cloudcomp.recommendation.service.Recommender;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/recommendation")
+@CrossOrigin
 public class RecomendationController {
 
     private Recommender recommender;

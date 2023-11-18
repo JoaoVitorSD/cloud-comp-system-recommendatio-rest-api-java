@@ -16,7 +16,6 @@ import java.util.List;
 public class Rule implements Serializable {
     private List<String> tracks;
     private Double percentage;
-
     private List<String> playlists;
 
 }

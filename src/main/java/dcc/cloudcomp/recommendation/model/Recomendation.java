@@ -16,7 +16,7 @@ public class Recomendation {
 
 
     public void addRule(RuleCompatibility rule){
-        if(recommendationList.size() <= 5){
+        if(recommendationList.size() <= 10){
             recommendationList.add(rule);
             return;
         }
@@ -26,7 +26,7 @@ public class Recomendation {
             recommendationList.remove(last);
             recommendationList.add(rule);
         }
-        recommendationList.sort((o1, o2) -> Float.compare(o1.getCompatibility(), o2.getCompatibility()));
+        recommendationList.sort((o1, o2) -> Float.compare(o2.getCompatibility(), o1.getCompatibility()));
     }
 
     public  List<String> getRecommentaions(){
