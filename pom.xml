@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dcc.cloudcomp</groupId>
-	<artifactId>recommendation</artifactId>
+	<artifactId>api-recommendation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>recommendation</name>
 	<description>Music Recommendation Rest Api</description>
@@ -35,6 +35,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
