@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joao-marcos-api-recommendation
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: joao-marcos-api-recommendation
+  template:
+    metadata:
+      labels:
+        app: joao-marcos-api-recommendation
+    spec:
+      containers:
+        - name: api-recommendation
+          image:  joaovitorsd/api-tp-cloud-ml-prd:latest
+          ports:
+            - containerPort: 8080
