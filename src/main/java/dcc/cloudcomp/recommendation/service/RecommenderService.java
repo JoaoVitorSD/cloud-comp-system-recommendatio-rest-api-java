@@ -8,8 +8,7 @@ import dcc.cloudcomp.recommendation.model.RulesMatchManager;
 import dcc.cloudcomp.recommendation.model.RuleCompatibility;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class RecommenderService {
 
 
     public RecommenderService() throws IOException {
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("usr/src/data.json");
+        BufferedInputStream inputStream =  new BufferedInputStream(new FileInputStream(("usr/src/data.json")));
         ObjectMapper objectMapper = new ObjectMapper();
         this.dataset = objectMapper.readValue(inputStream, new TypeReference<>(){});
     }
