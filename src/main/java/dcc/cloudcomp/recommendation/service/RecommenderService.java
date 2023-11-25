@@ -18,7 +18,7 @@ public class RecommenderService {
 
 
     public RecommenderService() throws IOException {
-        BufferedInputStream inputStream =  new BufferedInputStream(new FileInputStream(("usr/src/data.json")));
+        BufferedInputStream inputStream =  new BufferedInputStream(new FileInputStream(("/usr/src/data.json")));
         ObjectMapper objectMapper = new ObjectMapper();
         this.dataset = objectMapper.readValue(inputStream, new TypeReference<>(){});
     }
