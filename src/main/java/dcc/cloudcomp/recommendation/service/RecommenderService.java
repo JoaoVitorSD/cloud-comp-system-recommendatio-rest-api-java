@@ -14,12 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class Recommender {
+public class RecommenderService {
     Dataset dataset;
 
 
-    public Recommender() throws IOException {
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("data.json");
+    public RecommenderService() throws IOException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("usr/src/data.json");
         ObjectMapper objectMapper = new ObjectMapper();
         this.dataset = objectMapper.readValue(inputStream, new TypeReference<>(){});
     }

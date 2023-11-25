@@ -1,7 +1,7 @@
 package dcc.cloudcomp.recommendation.controller;
 
 import dcc.cloudcomp.recommendation.model.Recommendation;
-import dcc.cloudcomp.recommendation.service.Recommender;
+import dcc.cloudcomp.recommendation.service.RecommenderService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,10 +11,10 @@ import java.util.List;
 @CrossOrigin
 public class RecomendationController {
 
-    private Recommender recommender;
+    private RecommenderService recommender;
 
 
-    public RecomendationController(Recommender recommender) {
+    public RecomendationController(RecommenderService recommender) {
         this.recommender = recommender;
     }
 
