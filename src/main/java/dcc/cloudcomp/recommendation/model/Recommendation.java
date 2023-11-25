@@ -14,4 +14,5 @@ import java.util.List;
 public class Recommendation {
     private String playlist;
     private List<String> matchedTracks;
+    private List<String> rule;
 }

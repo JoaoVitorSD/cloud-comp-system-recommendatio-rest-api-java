@@ -47,7 +47,7 @@ public class RulesMatchManager {
             for(String playlist:rule.getRule().getPlaylists()){
                 if(!playlistsAdded.contains(playlist)){
                     playlistsAdded.add(playlist);
-                    recommendations.add(new Recommendation(playlist, rule.getMatchedTracks()));
+                    recommendations.add(new Recommendation(playlist, rule.getMatchedTracks(), rule.getRule().getTracks()));
                     break;
                 }
             }
