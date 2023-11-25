@@ -22,5 +22,5 @@ spec:
           volumeMounts:
             - name: project2-pv-joaodepollo
               mountPath: /usr/src
-        - ports:
-            containerPort: 8080
+          ports:
+           - containerPort: 8080
