@@ -17,10 +17,15 @@ public class RecommenderService {
     Dataset dataset;
 
 
-    public RecommenderService() throws IOException {
+    public RecommenderService()  {
+        try{
+
         BufferedInputStream inputStream =  new BufferedInputStream(new FileInputStream(("/usr/src/data.json")));
         ObjectMapper objectMapper = new ObjectMapper();
         this.dataset = objectMapper.readValue(inputStream, new TypeReference<>(){});
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 
 
