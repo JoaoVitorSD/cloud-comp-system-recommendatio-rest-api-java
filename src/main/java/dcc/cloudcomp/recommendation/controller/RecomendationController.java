@@ -18,8 +18,8 @@ public class RecomendationController {
         this.recommender = recommender;
     }
 
-    @GetMapping
-    public List<Recommendation> getRecommendation(@RequestParam List<String> tracks) {
-        return recommender.getRecommendation(tracks);
+    @PostMapping
+    public List<Recommendation> getRecommendation(@RequestBody List<String> songs) {
+        return recommender.getRecommendation(songs);
     }
 }
