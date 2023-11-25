@@ -12,8 +12,15 @@ spec:
       labels:
         app: joao-marcos-api-recommendation
     spec:
+      volumes:
+        - name: project2-pv-joaodepollo
+          persistentVolumeClaim:
+            claimName: project2-pv-joaodepollo
       containers:
         - name: api-recommendation
           image:  joaovitorsd/api-tp-cloud-ml-prd:latest
-          ports:
-            - containerPort: 8080
+          volumeMounts:
+            - name: project2-pv-joaodepollo
+              mountPath: /usr/src
+        - ports:
+            port: 8080
