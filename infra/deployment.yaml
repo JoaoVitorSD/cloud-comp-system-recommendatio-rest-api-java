@@ -17,7 +17,7 @@ spec:
           persistentVolumeClaim:
             claimName: project2-pv-joaodepollo
       containers:
-        - name: api-recommendation
+        - name: joao-marcos-api-recommendation
           image:  joaovitorsd/api-tp-cloud-ml-prd:latest
           volumeMounts:
             - name: project2-pv-joaodepollo
