@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: joao-marcos-api-recommendation-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: api-recommendation
   ports:
     - protocol: TCP
       port: 8080
-      targetPort: 32188
+      targetPort: 8080
       nodePort: 32188
