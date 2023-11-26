@@ -8,6 +8,6 @@ spec:
     app: api-recommendation
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 32188
+      targetPort: 32188
       nodePort: 32188
