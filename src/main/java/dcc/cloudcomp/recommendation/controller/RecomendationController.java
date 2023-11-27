@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/recommender")
+@RequestMapping("/api/recommend")
 @CrossOrigin
 public class RecomendationController {
 
