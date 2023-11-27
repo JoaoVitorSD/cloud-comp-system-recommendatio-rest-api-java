@@ -11,6 +11,8 @@ spec:
     metadata:
       labels:
         app: joao-marcos-api-recommendation
+        tier: backend
+        track: stable
     spec:
       volumes:
         - name: project2-pv-joaodepollo
