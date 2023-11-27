@@ -23,4 +23,5 @@ spec:
             - name: project2-pv-joaodepollo
               mountPath: /usr/src
           ports:
-          - containerPort: 8080
+          - name: http
+            containerPort: 8080
