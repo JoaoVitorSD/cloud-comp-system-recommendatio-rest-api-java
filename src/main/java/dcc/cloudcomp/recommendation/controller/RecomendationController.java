@@ -19,7 +19,7 @@ public class RecomendationController {
     }
 
     @PostMapping
-    public List<Recommendation> getRecommendation(@RequestBody List<String> songs) {
-        return recommender.getRecommendation(songs);
+    public List<Recommendation> getRecommendation(@RequestBody SongsRequest songs) {
+        return recommender.getRecommendation(songs.getSongs());
     }
 }
