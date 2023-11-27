@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: joao-marcos-api-recommendation-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: joao-marcos-api-recommendation
   ports:
