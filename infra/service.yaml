@@ -4,7 +4,6 @@ metadata:
   name: joao-marcos-api-recommendation-service
 spec:
   type: LoadBalancer
-  loadBalancerIP: 10.10.10.10
   selector:
     app: joao-marcos-api-recommendation
   ports:
